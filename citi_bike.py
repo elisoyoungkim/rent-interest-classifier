@@ -140,6 +140,9 @@ print 'Question 2: ', count_all/number_of_rides
 print 'Question 3: ', citibike_data.groupby('bikeid')['tripduration'].sum().std()
 print 'Question 4: ', np.mean(distance_list)
 print 'Question 5: ', longest - shortest
+'''MySQL query statment
+select tripduration, avg(x.countid)
+from(select tripduration, count(tripduration) as countid from citi_bike group by starttime, date(starttime), hour(starttime)) x''' 
 # print 'Question 6: ', citibike_data.groupby([times.hour])['tripduration'].sum()/len(citibike_data)
 print 'Question 7: ', exceed_count_all/len(citibike_data)
 print 'Question 8: ', np.mean(nb_of_moves)
