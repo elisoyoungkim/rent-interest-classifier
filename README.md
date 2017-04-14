@@ -1,4 +1,4 @@
-# Data Incubator Challenges
+## Data Incubator Challenge - 2016
 
 One of the most common uses of big data is to predict ‘what users want’, which is well used by many companies such as Netflix and Amazon. Here I propose a prediction project that predicts movie ratings. The average user ratings for newly launched movies can be predicted from understanding the relationship between some attributes of a movie and its rating using data mining techniques. There are such as kernel regression, neural network, model trees, to name a few. The ability of handle large data sets is expected of every data scientist these days. Companies no longer prefer to work on samples, they are using full data. So we need to work on real and dirty datasets. The movie rating prediction problem could sound easy, but data management is a non-trivial challenge. Here I want to use few ensemble methods including random forest, bagging decision trees, or adaboost for regression techniques.
 
