@@ -37,14 +37,16 @@ Given an importance score for each attribute where the larger score the more imp
 Distribution of interest level: 
  - **Low (69.5%)**
  - Medium (22.8%)
- - Hight (7.8%)
- 
+ - High (7.8%)
+
+![alt tag](https://cloud.githubusercontent.com/assets/22326212/25195695/6c24c80a-250c-11e7-88cd-13559a06e505.png)
+
  ----------
 **Feature Importance**
 ----------
 Ensemble methods are a promising solution to highly imbalanced nonlinear classification tasks with mixed variable types and noisy patterns with high variance. Methods compute the relative importance of each attribute. These importance values can be used to inform a feature selection process. This shows the construction of an Extra Trees ensemble of the dataset and the display of the relative feature importance.
 
-As can be seen in the *train.info()* table, data types are mixed.
+In this datasets, data types are mixed.
 
  1. **Categorical**: description, display_address, features, manager_id, building_id, street_address
  2. **Numeric**: bathrooms, bedrooms, latitude, longitude, price
@@ -55,8 +57,26 @@ In order to generate the feature importance matrix, non-numeric data types attri
  - **description**: The more words and well-described listings might be spotted. 
  - **features**: Some features are more preferred over others.
  - **photos**: The more images might get more views with having interest.
- 
- **Method**
+
+![alt tag](https://cloud.githubusercontent.com/assets/22326212/25195708/7792a400-250c-11e7-91be-087185f442d6.png)
+
+
+----------
+**Correlation Graph**
+----------
+![alt tag](https://cloud.githubusercontent.com/assets/22326212/25195723/8238d0b4-250c-11e7-80ff-329af136213f.png)
+
+----------
+**Correlation Graph**
+----------
+![alt tag](https://cloud.githubusercontent.com/assets/22326212/25195736/8a397002-250c-11e7-9cb1-a05a2a857572.png)
+
+----------
+**Geographical Graph**
+----------
+![alt tag](https://cloud.githubusercontent.com/assets/22326212/25195751/92e869d8-250c-11e7-9ecc-bc157bed2ab4.png)
+
+ **Methods**
 ---
 **Building the classification Model**
 
@@ -71,6 +91,7 @@ Two main techniques are considered to build the classification model: Decision T
    - Gradient boosting is also powerful techniques for building predictive models. While bagging considers candidate models equally, boosting technique is based on whether a weak learner can be modified to become better. XGBoost is an implementation of gradient boosted decision trees designed for speed and performance. XGBoost stands for eXtreme Gradient Boosting.
 
 I generated a set of new features derived from the datasets as a preprocessing. A table with a new set of 15 features is generated in a CSV format instead of original mixed data types instances and it is mapped into inputs in XGBoost classification model. Other classification models - Support Vector Machine, Rnadom Forest, and Gradient Random Boosting were used to compare its performances.
+![alt tag](https://cloud.githubusercontent.com/assets/22326212/25195768/a1eed5b6-250c-11e7-82fa-d407b0f6f146.png)
 
 Conclusion
 ---
