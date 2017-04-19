@@ -11,6 +11,12 @@ Rent Interest Classifier
 ---
 The problem of classification is considered as learning a model that maps instances to class labels. While useful for many purposes, there are numerous applications in which the estimation of the probabilities of the different classes is more desirable than just selecting one of them, in that probabilities are useful as a measure of the reliability of a classification.
 
+**Files**
+---
+loading_data.py: Load datasets
+preprocessing.py: Convering all types to Numeric values based on explaratory data analysis results.
+EDA.py: Formulating important features and visualizing such features to generate affective features.
+
 **Datasets**
 ---
 NYC rent listing data from the rental website RentHop which is used to find the desired home.
