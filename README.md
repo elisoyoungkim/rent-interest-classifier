@@ -107,6 +107,9 @@ Conclusion
 
 Instead of running a time consuming cross validation, you can pull a fold out from the full training set and use it as your subtest in XGBoost. By adding it to the watchlist, you can assess the accuracy of your model on a smaller test set while training it.  Of course, since this doesn’t compare all folds against each other like actual cross validation, it doesn’t account for variance between folds and is prone to some degree of error. Often, the test score could be lowered to 0.55 in script, but our submitted model received a Kaggle score closer to 0.6.
 
-Our final model, then, was an XGBoost that included a) basic features like price, b) mutated features, like price-per-room and number of photos, and c) engineered features, including neighborhood designations and principal-component stand-ins for various features.  This netted us a final score of 0.5625.  It's a solid figure, though one much higher than the contest leaders.  We came up with some good ideas, then, but we still have a ways to go before we're machine-learning gurus.
+Our final model, then, was an XGBoost with important features which are:
 
-The conclusions we can draw from this project are many. It is extremely important to fully understand and define the value that is being modeled, as well as keep an objective view in regards to the analysis. It was quite interesting and humbling to find so many seemingly contrarian indicators throughout this analysis - such as the surprisingly unimportant Latitude/Longitude features.
+- basic features such as number of rooms, price, and geographic information latitude and longitude, 
+- statistically modified features such as price-per-room, the number of high-interest mangers and building profilers, the number of photos/features and words in descriptions.
+
+The conclusions we can draw from this project are many. It is extremely important to fully understand and define the value that is being modeled, as well as keep an objective view in regards to the analysis. Further research needed.
