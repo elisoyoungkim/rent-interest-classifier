@@ -17,6 +17,8 @@ The problem of classification is considered as learning a model that maps instan
 -  ***preprocessing.py***: Convering all types to Numeric values based on explaratory data analysis results.
 -  ***EDA.py***: Formulating important features and visualizing such features to generate affective features.
 
+- ***two_sigma.ipynb***: Details of code with inputs and outputs.
+
 **Datasets**
 ---
 NYC rent listing data from the rental website RentHop which is used to find the desired home.
