@@ -13,7 +13,7 @@ The problem of classification is considered as learning a model that maps instan
 
 **Files**
 ---
--  ***test.py***: main file
+-  ***rent_classifier.py***: main file
 ---
 -  ***loading_data.py***: Load datasets
 -  ***preprocessing.py***: Convering all types to Numeric values based on explaratory data analysis results.
