@@ -113,6 +113,7 @@ The final model is down using AdaBoost with important features which are:
 
 - the number of high-interest mangers and building profilers, the number of photos/features and words in descriptions.
 
+Suprisingly, some of the features such as **created** date are found quite imporant through the optimization phase.
 It is extremely important to fully understand and define the value that is being modeled, as well as keep an objective view in regards to the analysis. Further research needed regarding probability estimates with loss.
 
 **Relevant papers**
