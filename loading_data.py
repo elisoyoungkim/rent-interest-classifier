@@ -8,7 +8,7 @@ from subprocess import check_output
 print(check_output(["ls", "/Users/soyoungkim/Desktop/python_codes/two-sigma"]).decode("utf8"))
 
 import matplotlib.pyplot as plt
-get_ipython().magic(u'matplotlib inline')
+# get_ipython().magic(u'matplotlib inline')
 import seaborn as sns
 sns.set(style="whitegrid", color_codes=True)
 sns.set(font_scale=1)
@@ -17,8 +17,8 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 from plotly import tools
 
-from plotly.offline import download_plotlyjs, init_notebook_mode, iplot
-init_notebook_mode(connected=True)
+#from plotly.offline import download_plotlyjs, init_notebook_mode, iplot
+#init_notebook_mode(connected=True)
 
 # Load datasets
 train = pd.read_json("/Users/soyoungkim/Desktop/python_codes/two-sigma/data/train.json")
