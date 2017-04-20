@@ -107,10 +107,11 @@ I generated a set of new features derived from the datasets as a preprocessing. 
 Conclusion
 ---
 
-Instead of running a time consuming cross validation, I folded out from the full training set and use it as the subtest in XGBoost. The final model, then, was an XGBoost with important features which are:
+The final model, then, was an XGBoost with important features which are:
 
-- basic features such as number of rooms, price, and geographic information latitude and longitude, 
-- statistically modified features such as price-per-room, the number of high-interest mangers and building profilers, the number of photos/features and words in descriptions.
+- basic features such as number of rooms, price, and geographic information latitude and longitude, statistically modified features such as price-per-room, 
+
+- the number of high-interest mangers and building profilers, the number of photos/features and words in descriptions.
 
 It is extremely important to fully understand and define the value that is being modeled, as well as keep an objective view in regards to the analysis. Further research needed regarding probability estimates with loss.
 
