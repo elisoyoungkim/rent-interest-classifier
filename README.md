@@ -105,11 +105,20 @@ I generated a set of new features derived from the datasets as a preprocessing. 
 Conclusion
 ---
 
-Instead of running a time consuming cross validation, you can pull a fold out from the full training set and use it as your subtest in XGBoost. By adding it to the watchlist, you can assess the accuracy of your model on a smaller test set while training it.  Of course, since this doesn’t compare all folds against each other like actual cross validation, it doesn’t account for variance between folds and is prone to some degree of error. Often, the test score could be lowered to 0.55 in script, but our submitted model received a Kaggle score closer to 0.6.
-
-Our final model, then, was an XGBoost with important features which are:
+Instead of running a time consuming cross validation, I folded out from the full training set and use it as the subtest in XGBoost. The final model, then, was an XGBoost with important features which are:
 
 - basic features such as number of rooms, price, and geographic information latitude and longitude, 
 - statistically modified features such as price-per-room, the number of high-interest mangers and building profilers, the number of photos/features and words in descriptions.
 
-The conclusions we can draw from this project are many. It is extremely important to fully understand and define the value that is being modeled, as well as keep an objective view in regards to the analysis. Further research needed.
+It is extremely important to fully understand and define the value that is being modeled, as well as keep an objective view in regards to the analysis. Further research needed regarding probability estimates with loss.
+
+**Relevant papers**
+
+- [Probability Estimates for Multi-class Classification by Pairwise Coupling](https://www.csie.ntu.edu.tw/~cjlin/papers/svmprob/svmprob.pdf)
+
+- [Multi-class AdaBoost](http://ww.web.stanford.edu/~hastie/Papers/SII-2-3-A8-Zhu.pdf)
+
+- [Probability Estimation for Multi-Class
+Classification based on Label Ranking](http://www.cs.bris.ac.uk/~flach/ECMLPKDD2012papers/1125762.pdf)
+
+- [Predicting accurate probabilities with a ranking loss](http://icml.cc/2012/papers/372.pdf)
