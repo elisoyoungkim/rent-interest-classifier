@@ -1,3 +1,5 @@
+import numpy as np
+import pandas as pd
 from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
@@ -5,15 +7,15 @@ from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from textblob import TextBlob
 from sklearn.metrics import accuracy_score
+from xgboost import XGBClassifier
 import time
-import EDA
 
 def pre_processing(data):
     global important_features
-    important_features = ['bathrooms', 'bedrooms', 'price', 'price_room',
-                            'latitude','longitude', 'nb_images','nb_features', 
-                            'nb_description', 'description_len','b_counts', 'm_counts',
-                            'b_count_log', 'm_count_log']
+    important_features = ['bathrooms', 'bedrooms', 'price', 'price_room','latitude',
+                          'longitude', 'nb_images','nb_features', 'sentiment',
+                          'nb_description', 'description_len','b_counts', 'm_counts',
+                          'b_count_log', 'm_count_log']
     
     data['nb_images'] = data['photos'].apply(len)
     data['nb_features'] = data['features'].apply(len)
@@ -63,7 +65,6 @@ def classification(train_data, test_data, target, test_size=0.2, random_state=42
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=test_size,
                                                         random_state=random_state)
     
-    
     # XGBoost 
     xgb_model = XGBClassifier()
     xgb_model.fit(X_train, y_train)
@@ -95,8 +96,15 @@ def classification(train_data, test_data, target, test_size=0.2, random_state=42
                  gradientB_model.score(X_train, y_train),
                  accuracy_score(y_test, gradientB_model.predict(X_test)))
 
+train = pd.read_json("/Users/soyoungkim/Desktop/python_codes/two-sigma/data/train.json")
+test = pd.read_json("/Users/soyoungkim/Desktop/python_codes/two-sigma/data/test.json")
+
 start_time = time.time()
+train['interest'] = np.where(train['interest_level']=='high', 1,
+                             np.where(train['interest_level']=='medium', 2, 3))
+
+numerical_features = pre_processing(train)
 processed_test_data = pre_processing(test)
 print ('A set of 15 derived features:{0}\n'.format(important_features))
-classification(numerical_features, processed_test_data, train['interest_level'])
+classification(numerical_features, processed_test_data, train['interest'])
 print ('--- %s seconds ---' % (time.time() - start_time))
