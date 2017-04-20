@@ -23,6 +23,7 @@ from plotly import tools
 # Load datasets
 train = pd.read_json("/Users/soyoungkim/Desktop/python_codes/two-sigma/data/train.json")
 test = pd.read_json("/Users/soyoungkim/Desktop/python_codes/two-sigma/data/test.json")
+global train, test
 
 print ('There are {0} rows and {1} attributes.'.format(train.shape[0], train.shape[1]))
 print (len(train['listing_id'].unique()))

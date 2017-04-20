@@ -57,8 +57,8 @@ def print_scores(test_name, train, test):
 
 def classification(train_data, test_data, target, test_size=0.2, random_state=42):    
     # Split data into X and y
-    X = numerical_features
-    Y = train['interest_level']
+    X = train_data
+    Y = target
 
     # Split data into train and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=test_size,
