@@ -101,13 +101,13 @@ Two main techniques are considered to build the classification model: Decision T
     2. Boosting
    - Gradient boosting is also powerful techniques for building predictive models. While bagging considers candidate models equally, boosting technique is based on whether a weak learner can be modified to become better. XGBoost is an implementation of gradient boosted decision trees designed for speed and performance. XGBoost stands for eXtreme Gradient Boosting.
 
-I generated a set of new features derived from the datasets as a preprocessing. A table with a new set of 15 features is generated in a CSV format instead of original mixed data types instances and it is mapped into inputs in XGBoost classification model. Other classification models - Support Vector Machine, Rnadom Forest, and Gradient Random Boosting were used to compare its performances.
+I generated a set of new features derived from the datasets as a preprocessing. A table with a new set of 15 features is generated in a CSV format instead of original mixed data types instances and it is mapped into inputs in AdaBoost/XGBoost - (working on both) - classification model. Other classification models - Support Vector Machine, Rnadom Forest, and Gradient Random Boosting were used to compare its performances.
 ![alt tag](https://cloud.githubusercontent.com/assets/22326212/25195768/a1eed5b6-250c-11e7-82fa-d407b0f6f146.png)
 
 Conclusion
 ---
 
-The final model, then, was an XGBoost with important features which are:
+The final model is down using AdaBoost with important features which are:
 
 - basic features such as number of rooms, price, and geographic information latitude and longitude, statistically modified features such as price-per-room, 
 
