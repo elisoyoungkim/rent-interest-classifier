@@ -8,7 +8,6 @@ from sklearn.model_selection import train_test_split
 from textblob import TextBlob
 from sklearn.metrics import accuracy_score
 from xgboost import XGBClassifier
-import time
 
 def pre_processing(data):
     global important_features
@@ -95,16 +94,3 @@ def classification(train_data, test_data, target, test_size=0.2, random_state=42
     print_scores("Gradient Boosting Classifier",
                  gradientB_model.score(X_train, y_train),
                  accuracy_score(y_test, gradientB_model.predict(X_test)))
-
-train = pd.read_json("/Users/soyoungkim/Desktop/python_codes/two-sigma/data/train.json")
-test = pd.read_json("/Users/soyoungkim/Desktop/python_codes/two-sigma/data/test.json")
-
-start_time = time.time()
-train['interest'] = np.where(train['interest_level']=='high', 1,
-                             np.where(train['interest_level']=='medium', 2, 3))
-
-numerical_features = pre_processing(train)
-processed_test_data = pre_processing(test)
-print ('A set of 15 derived features:{0}\n'.format(important_features))
-classification(numerical_features, processed_test_data, train['interest'])
-print ('--- %s seconds ---' % (time.time() - start_time))
