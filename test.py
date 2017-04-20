@@ -158,6 +158,11 @@ if __name__ == '__main__':
     train['interest'] = np.where(train['interest_level']=='high', 1,
                                 np.where(train['interest_level']=='medium', 2, 3))
 
+    global important_features
+    important_features = ['bathrooms', 'bedrooms', 'price', 'price_room','latitude',
+                          'longitude', 'nb_images','nb_features', 'sentiment',
+                          'nb_description', 'description_len','b_counts', 'm_counts',
+                          'b_count_log', 'm_count_log']
     numerical_features = preprocessing.pre_processing(train)
     processed_test_data = preprocessing.pre_processing(test)
     print ('A set of 15 derived features:{0}\n'.format(important_features))
