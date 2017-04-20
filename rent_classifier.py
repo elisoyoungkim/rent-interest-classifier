@@ -20,6 +20,7 @@ import loading_data, preprocessing
 def gradient_boost(x_train, y_train, x_test):
     gradient_boost_model = GradientBoostingClassifier(n_estimators=200, learning_rate=0.1, max_depth=6)
     gradient_boost_model.fit(x_train, y_train)
+    # predict_proba() yeileds an array of class probabilities: (0.2 0,2 0.6)
     print (gradient_boost_model.predict_proba(x_test))
     return gradient_boost_model.predict_proba(x_test)
     
